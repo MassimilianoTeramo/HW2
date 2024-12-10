@@ -244,6 +244,7 @@ AGGIUNTE CSS
   animation-fill-mode: forwards;
   animation-play-state: running;
   color: white;
+  
   a {
     color: white;
   }
@@ -251,17 +252,27 @@ AGGIUNTE CSS
 
 @keyframes popUp {
   0% {
-    display: inline-block;
+    display: block;
+    animation-delay: 0.5s;
+    transform: translate(0rem, 200px);
     
   }
   100% {
-    display: inline;
-    transform: translate(0rem, -20px);
-    transition: 0.7s;
+    display: block;
+    transform: translate(0rem, 172px);
+    transition: 1s;
     background-color: #000000db;
-    border-radius: 40px 40px 0px 0px;
-    border: 2px solid rgb(246, 8, 8);
+    
+    
   }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {transform: rotate(360deg);
+}
 }
 
 @keyframes borderAn {
@@ -270,9 +281,15 @@ AGGIUNTE CSS
     box-shadow: 1px 1px 40px 5px rgb(243, 243, 59);
 
   }
-  100% {
+  50% {
     border: 2px solid rgb(246, 8, 8);
     box-shadow: 1px 1px 40px 5px rgb(246, 8, 8);
+
+  }
+
+  100% {
+    border: 2px solid rgb(160, 243, 59);
+    box-shadow: 1px 1px 40px 5px rgb(160, 243, 59);
   
 }
 }
@@ -288,12 +305,7 @@ AGGIUNTE CSS
   animation-direction: normal;
   animation-fill-mode: forwards;
   animation-play-state: running;
-  img {
-    width: 100%;
-    height: 100%;
 
-  }
- 
 }
 
 .maxClass:hover {
@@ -305,7 +317,7 @@ AGGIUNTE CSS
   box-shadow: 1px 1px 40px 5px rgb(243, 243, 59); 
 
   .hide {
-    display: inline;
+    display: block;
     animation-name: popUp;
     translate: 0px -10.7rem;
 
@@ -313,44 +325,57 @@ AGGIUNTE CSS
 
 }
 
+.fa-play {
+  margin-top: 10px;
+  border:2px solid rgb(78, 241, 8);
+  border-radius: 50%;
+  border-top:2px solid rgb(246, 8, 8);
+  border-bottom: 2px solid rgb(246, 8, 8);
+  height: 35px;
+  width: 50px;
+  color: yellow;
+  padding-bottom: 30px;
+  animation: rotate 3s linear infinite;
+
+}
+
 .maxClass:hover+ * +* +*+*{
   filter: brightness(0.3);
-  scale: 0.9;
+  
 }
 
 .maxClass:hover+ * +* +*{
   filter: brightness(0.3);
-  scale: 0.9;
+  
 }
 
 .maxClass:hover+ * +*{
   filter: brightness(0.3);
-  scale: 0.9;
+  
 }
 
 .maxClass:hover+ *{
   filter: brightness(0.3);
-  scale: 0.9;
 }
 
 .maxClass:has(+ *:hover){
   filter: brightness(0.3);
-  scale: 0.9;
+  
 }
 
 .maxClass:has(+*+ *:hover){
   filter: brightness(0.3);
-  scale: 0.9;
+  
 }
 
 .maxClass:has(+*+*+ *:hover){
   filter: brightness(0.3);
-  scale: 0.9;
+  
 }
 
 .maxClass:has(+*+*+*+ *:hover){
   filter: brightness(0.3);
-  scale: 0.9;
+  
 }
 
 .maxButton{

@@ -19,23 +19,29 @@ let found = document.getElementById("found")
         let element = res[i]
         
         searchSection.innerHTML += `
-            <div class="card maxClass">
-             <img src="${element.album.cover_xl}" class="card-img-top img-fluid" alt="cover">
-             <div class="hide">
-            <div class="card-body">
-             <h5 class="card-title">${element.album.title}</h5>
-           <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#maxModal">
-           More Info
-            </button>
-          </div>
-          <div class="card-body d-flex justify-content-around" "d-none">
-            <button class"btn btn-dark">
-           <a target= "_blank" href="${element.preview}" class="card-link">Preview</a>
-           </button>
-           <a href="${element.link}" class="card-link">Track Link</a>
-          </div>
-          </div>
-          </div>
+            <div class="card img-fluid maxClass">
+                <img class="card-img-top" src="${element.album.cover_xl}" alt="Card image" style="width:100%">
+                      <div class="card-img-overlay hide pt-5">
+                        <h5 class="card-title pb-3">${element.album.title}</h5>
+                        <button type="button" class="mt-2 btn btn-warning" data-bs-toggle="modal" data-bs-target="#maxModal">
+                        More Info
+                        </button>
+                        <div class="d-flex align-items-start pt-3 justify-content-between">
+              
+                        <div class="card-body d-flex flex-column pt-0 align-items-start">
+
+                          <div class=" d-flex flex-column pt-0 align-items-center">
+                            <span>Preview</span>
+                            <a target="_blank" href="${element.preview}" class="card-link"><i class="fa-solid fa-play pt-3"></i></a>
+                          </div>
+                        </div>
+                          <div class=" d-flex flex-column pt-0 align-items-end">
+                            <div class=" d-flex flex-column pt-0 align-items-center">
+                            <span>Track List</span>
+                            <a target="_blank" href="${element.link}" class="card-link pt-0"><i class="fa-solid fa-list pt-3"></i></a>
+                            </div>
+                          </div>
+            </div>
             `
 
       }return [data, inputVal]
